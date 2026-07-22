@@ -320,7 +320,7 @@ bool initializeCSVFile(const char *path, const String &header)
 {
 	if (fs_exists(path))
 	{
-		REMOTE_LOG_INFO("CSV file already exists:", path);
+		REMOTE_LOG_DEBUG("CSV file already exists:", path);
 		return true; // File already exists, no need to initialize
 	}
 	File file = fs_open(path, FILE_WRITE);
@@ -336,6 +336,7 @@ bool initializeCSVFile(const char *path, const String &header)
 		return false;
 	}
 	file.close();
+	REMOTE_LOG_INFO("CSV file initialized:", path);
 	return true;
 }
 
@@ -354,5 +355,6 @@ bool writeCSVFile(const char *path, const String &content)
 		return false;
 	}
 	file.close();
+	REMOTE_LOG_DEBUG("CSV file updated:", path);
 	return true;
 }
