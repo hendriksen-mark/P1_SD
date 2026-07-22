@@ -4,7 +4,7 @@
 #pragma once
 
 #include "config.h"
-#include "ethernet_server.h"
+#include "wifi_server.h"
 
 // NTP time is seconds since 1900-01-01 00:00:00 UTC
 // Unix time is seconds since 1970-01-01 00:00:00 UTC

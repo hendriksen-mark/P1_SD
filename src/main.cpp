@@ -5,7 +5,8 @@
 #include "config.h"
 #include "P1.h"
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   REMOTE_LOG_INFO("Start ESP32");
   ChangeNeoPixels_info();
@@ -21,8 +22,9 @@ void setup() {
   P1_setup();
 }
 
-void loop() {
-  ethernet_loop();
+void loop()
+{
+  wifi_loop();
   P1_loop();
   handleNTPUpdate();
   yield(); // Prevent watchdog reset - allows ESP32 to handle WiFi/background tasks

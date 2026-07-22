@@ -288,18 +288,18 @@ void handleFSInfo()
 // Helper function to format bytes to KB, MB, etc.
 String formatBytes(size_t bytes)
 {
-    const char* units[] = {"B", "KB", "MB", "GB", "TB"};
+    const char *units[] = {"B", "KB", "MB", "GB", "TB"};
     const int numUnits = sizeof(units) / sizeof(units[0]);
-    
+
     int unitIndex = 0;
     double size = bytes;
-    
+
     while (size >= 1024.0 && unitIndex < numUnits - 1)
     {
         size /= 1024.0;
         unitIndex++;
     }
-    
+
     if (unitIndex == 0)
     {
         return String((int)size) + " " + units[unitIndex];

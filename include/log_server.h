@@ -8,7 +8,7 @@
 
 #include "custom_log.h"
 #include "ntp_client.h"
-#include "ethernet_server.h"
+#include "wifi_server.h"
 #include "config.h"
 
 // Log server and client management

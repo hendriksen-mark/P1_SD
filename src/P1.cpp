@@ -47,8 +47,7 @@ void P1_setup()
     server_P1.on("/", []()
                  {
         server_P1.sendHeader("Location", "/files", true);
-        server_P1.send(302, "text/plain", "");
-    });
+        server_P1.send(302, "text/plain", ""); });
     server_P1.begin();
     setup_file(server_P1);
     httpUpdateServer.setup(&server_P1);

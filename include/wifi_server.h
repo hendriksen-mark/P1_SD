@@ -1,5 +1,5 @@
-#ifndef ETHERNET_SERVER_H
-#define ETHERNET_SERVER_H
+#ifndef WIFI_SERVER_H
+#define WIFI_SERVER_H
 
 #pragma once
 
@@ -15,6 +15,6 @@
 
 void ESP_Server_setup();
 void ota_setup();
-void ethernet_loop();
+void wifi_loop();
 
-#endif // ETHERNET_SERVER_H
+#endif // WIFI_SERVER_H

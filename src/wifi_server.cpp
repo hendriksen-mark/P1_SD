@@ -1,4 +1,4 @@
-#include "ethernet_server.h"
+#include "wifi_server.h"
 
 void ESP_Server_setup()
 {
@@ -60,7 +60,7 @@ void ota_setup()
 		.begin();
 }
 
-void ethernet_loop()
+void wifi_loop()
 {
 	ArduinoOTA.handle();
 
