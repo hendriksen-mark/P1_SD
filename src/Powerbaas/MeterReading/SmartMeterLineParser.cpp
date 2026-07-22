@@ -107,7 +107,7 @@ void SmartMeterLineParser::parse(char* line, MeterReading& meterReading) {
   // MBUS  devices
   uint8_t mbusDevice = 0;
   uint8_t mbusDeviceType = 0;
-  if (sscanf(line, "0-%u:24.1.0(%u)", &mbusDevice, &mbusDeviceType) == 2) {
+  if (sscanf(line, "0-%hhu:24.1.0(%hhu)", &mbusDevice, &mbusDeviceType) == 2) {
     _currentMbusDevice = mbusDevice;
     _currentMbusDeviceType = mbusDeviceType;
   }
@@ -115,7 +115,7 @@ void SmartMeterLineParser::parse(char* line, MeterReading& meterReading) {
   // 0-?:24.2.1 = MBUS Gas meter 1 tm 4 - Summer/Winter
   uint8_t discardGas2 = 0;
   uint8_t discardGas3 = 0;
-  if (sscanf(line, "0-%u:24.2.1(%ld%c)(%lf*m3", &mbusDevice, &discardGas2, &discardGas3, &result) == 4) {
+  if (sscanf(line, "0-%hhu:24.2.1(%hhu%c)(%lf*m3)", &mbusDevice, &discardGas2, &discardGas3, &result) == 4) {
     if(mbusDevice == _currentMbusDevice && _currentMbusDeviceType == 3) {
         meterReading.gas = resultToInt(result);
         _currentMbusDeviceType = 0;
@@ -131,7 +131,7 @@ void SmartMeterLineParser::parse(char* line, MeterReading& meterReading) {
   }
 
   // Fallback Gas Belgium LGF5E360
-  if (sscanf(line, "0-%u:24.2.3(%ld%c)(%lf*m3", &mbusDevice, &discardGas2, &discardGas3, &result) == 4) {
+  if (sscanf(line, "0-%hhu:24.2.3(%hhu%c)(%lf*m3)", &mbusDevice, &discardGas2, &discardGas3, &result) == 4) {
     if(mbusDevice == _currentMbusDevice && _currentMbusDeviceType == 3) {
       meterReading.gas = resultToInt(result);
       _currentMbusDeviceType = 0;

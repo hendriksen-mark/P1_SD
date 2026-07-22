@@ -9,6 +9,10 @@ void ESP_Server_setup()
 
 	bool res;
 	res = wm.autoConnect(DEVICE_NAME);
+	if (!res)
+	{
+		ESP.restart();
+	}
 	// Setup mDNS
 	if (MDNS.begin(DEVICE_NAME))
 	{

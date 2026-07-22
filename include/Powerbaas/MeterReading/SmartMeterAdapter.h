@@ -24,7 +24,12 @@ class SmartMeterAdapter {
     ):
       _smartMeter(smartMeter),
       _smartMeterLineParser(smartMeterLineParser),
-      _meterReading(meterReading)
+      _meterReading(meterReading),
+      _lastTelegramCharacter('\0'), // Oplossing voor de CWE-398 waarschuwing
+      _state(SmartMeterState::idle),  // Voorkom de volgende potentiële waarschuwing (pas de beginstatus aan indien nodig)
+      _telegramIndex(0),
+      _serialMode(1), // Default to 1, can be changed later
+      _telegramLine{0} // Initialize the telegram line buffer to zero
     {}
 
     void receive(const MeterReadingCallback& onMeterReading);

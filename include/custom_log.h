@@ -48,9 +48,16 @@ template <typename... Args>
 String buildLogMessage(Args &&...args)
 {
 	String s;
-	int idx = 0;
-	int dummy[] = {0, ((idx++ > 0 ? ((s += " "), 0) : 0), s += String(std::forward<Args>(args)), 0)...};
-	(void)dummy;
+	bool first = true;
+	auto append_with_space = [&](const auto& arg) {
+		if (!first) {
+			s += " ";
+		}
+		first = false;
+		s += String(arg);
+	};
+
+	(append_with_space(args), ...); // Fold expressie die elk argument afhandelt
 	return s;
 }
 

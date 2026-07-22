@@ -55,7 +55,7 @@ void P1_setup()
     powerbaas.onMeterReading([](const MeterReading &meterReading)
                              {
     String log_file_name = determine_p1_file_name(meterReading.timestamp);
-    initializeCSVFile((char*)log_file_name.c_str(), "timestamp;powerUsage;powerDeliverHigh;powerDeliverLow;powerReturnHigh;powerReturnLow;gas;voltageL1;voltageL2;voltageL3;currentL1;currentL2;currentL3;powerL1;powerL2;powerL3\n");
+    initializeCSVFile(log_file_name.c_str(), "timestamp;powerUsage;powerDeliverHigh;powerDeliverLow;powerReturnHigh;powerReturnLow;gas;voltageL1;voltageL2;voltageL3;currentL1;currentL2;currentL3;powerL1;powerL2;powerL3\n");
     String message = formatTime(meterReading.timestamp) + ";" +
                      String(meterReading.powerUsage) + ";" +
                      String(meterReading.powerDeliverHigh) + ";" +

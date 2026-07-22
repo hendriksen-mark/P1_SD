@@ -640,11 +640,10 @@ void handleFileDownload()
 
                 // Send the file in chunks to avoid memory issues with large files
                 uint8_t buffer[1024];
-                size_t bytesRead;
                 size_t totalSent = 0;
                 while (file.available())
                 {
-                    bytesRead = file.read(buffer, sizeof(buffer));
+                    size_t bytesRead = file.read(buffer, sizeof(buffer));
                     if (bytesRead > 0)
                     {
                         client.write(buffer, bytesRead);
@@ -653,7 +652,7 @@ void handleFileDownload()
                     }
                 }
                 file.close();
-                REMOTE_LOG_INFO("File downloaded successfully:", fileName.c_str());
+                REMOTE_LOG_INFO("File downloaded successfully:", fileName.c_str(), "Total bytes sent:", String(totalSent).c_str());
                 return; // Important: return here to skip the send() call below
             }
             else
