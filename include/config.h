@@ -11,16 +11,16 @@
 #endif
 
 #ifndef SD_MISO_PIN
-#define SD_MISO_PIN 5
+#define SD_MISO_PIN MISO
 #endif
 #ifndef SD_MOSI_PIN
-#define SD_MOSI_PIN 6
+#define SD_MOSI_PIN MOSI
 #endif
 #ifndef SD_SCLK_PIN
-#define SD_SCLK_PIN 7
+#define SD_SCLK_PIN SCK
 #endif
 #ifndef SD_CS_PIN
-#define SD_CS_PIN 15 // Chip Select pin for SD card
+#define SD_CS_PIN 10 // Chip Select pin for SD card
 #endif
 #ifndef DEVICE_NAME
 #define DEVICE_NAME "P1_SD"

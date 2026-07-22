@@ -24,5 +24,6 @@ void setup() {
 void loop() {
   ethernet_loop();
   P1_loop();
+  handleNTPUpdate();
   yield(); // Prevent watchdog reset - allows ESP32 to handle WiFi/background tasks
 }

@@ -55,12 +55,9 @@ bool updateNTPTime()
     packetBuffer[15] = 52;
 
     // Send packet to NTP server
-    IPAddress ntpServerIP;
-    // Use Google's public NTP server IP (time.google.com)
-    ntpServerIP = IPAddress(216, 239, 35, 0);
-    REMOTE_LOG_DEBUG(("Using NTP server: " + ntpServerIP.toString()).c_str());
+    REMOTE_LOG_DEBUG(("Using NTP server: " + String(NTP_SERVER)).c_str());
 
-    tempNtpUdp.beginPacket(ntpServerIP, 123); // NTP requests are to port 123
+    tempNtpUdp.beginPacket(NTP_SERVER, 123); // NTP requests are to port 123
     tempNtpUdp.write(packetBuffer, NTP_PACKET_SIZE);
     tempNtpUdp.endPacket();
 
