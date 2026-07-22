@@ -1,8 +1,14 @@
 #include "ethernet_server.h"
-#include "log_server.h"
 
 void ESP_Server_setup()
 {
+	WiFiManager wm;
+	WiFi.mode(WIFI_STA);
+	wm.setDebugOutput(false);
+	wm.setConfigPortalTimeout(120);
+
+	bool res;
+	res = wm.autoConnect(DEVICE_NAME);
 	// Setup mDNS
 	if (MDNS.begin(DEVICE_NAME))
 	{

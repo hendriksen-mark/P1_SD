@@ -6,7 +6,9 @@
 #include <DNSServer.h>
 #include <ESPmDNS.h>
 #include <ArduinoOTA.h>
+#include <WiFiManager.h>
 
+#include "log_server.h"
 #include "custom_log.h"
 #include "functions.h"
 #include "config.h"
