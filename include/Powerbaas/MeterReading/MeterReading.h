@@ -1,6 +1,8 @@
 #ifndef __METER_READING_H__
 #define __METER_READING_H__
 
+#pragma once
+
 #include <stdint.h>
 #include <functional>
 

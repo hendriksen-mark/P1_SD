@@ -1,20 +1,13 @@
 #ifndef __POWERBAAS_H__
 #define __POWERBAAS_H__
 
+#pragma once
+
 #include <HardwareSerial.h>
 
 #include "MeterReading/MeterReading.h"
 #include "MeterReading/SmartMeterAdapter.h"
 #include "MeterReading/SmartMeterLineParser.h"
-
-#include "System/SystemTime.h"
-#include "System/Timer.h"
-
-#include "NewRemoteSwitch/NewRemoteTransmitter.h"
-
-#include "Condition/ConditionMachine.h"
-#include "Condition/ConditionService.h"
-#include "Condition/ConditionDeviceHelper.h"
 
 #include "../custom_log.h"
 

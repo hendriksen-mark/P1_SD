@@ -1,6 +1,8 @@
 #ifndef __SMART_METER_LINE_PARSER_H__
 #define __SMART_METER_LINE_PARSER_H__
 
+#pragma once
+
 #include <cstdio>
 #include <WString.h>
 #include "MeterReading.h"

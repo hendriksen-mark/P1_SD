@@ -1,6 +1,8 @@
 #ifndef __SMART_METER_ADAPTER_H__
 #define __SMART_METER_ADAPTER_H__
 
+#pragma once
+
 #define TELEGRAM_LINE_SIZE 75
 
 #include <HardwareSerial.h>
