@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <Powerbaas.h>
+#include <Powerbaas/Powerbaas.h>
 #include <WebServer.h>
 #include <HTTPUpdateServer.h>
 

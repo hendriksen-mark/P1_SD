@@ -4,7 +4,7 @@ HTTPUpdateServer httpUpdateServer;
 
 WebServer server_P1(BASE_PORT);
 
-Powerbaas powerbaas(true);
+Powerbaas powerbaas;
 
 String determine_p1_file_name(const char *timestamp)
 {
